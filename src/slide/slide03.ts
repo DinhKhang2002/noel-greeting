@@ -2,7 +2,7 @@ import '../css/slide03.css'
 import { getConfig, type ChristmasCardConfig, saveConfigToLocalStorage } from '../config'
 import { slide03ImagePaths } from '../utils/imageLoader'
 
-function renderSlide03(_config: ChristmasCardConfig) {
+function renderSlide03(config: ChristmasCardConfig) {
   const app = document.querySelector<HTMLDivElement>('#app')!
   
   app.innerHTML = `
@@ -20,8 +20,8 @@ function renderSlide03(_config: ChristmasCardConfig) {
       <!-- Main Title Section -->
       <div class="main-title-section">
         <div class="main-title-content">
-          <h1 class="main-title">Best wishes For A Christmas Party</h1>
-          <p class="main-subtitle">'Giữa không khí Giáng sinh rực rỡ, mong rằng mọi điều an lành và dịu dàng nhất sẽ tìm đến bạn. Cầu chúc cho trái tim bạn luôn được sưởi ấm bởi tình yêu thương, sự thấu hiểu và những khoảnh khắc bình yên bên những người bạn trân quý.'</p>
+          <h1 class="main-title">Những lời chúc nhỏ, cho một người rất đặc biệt</h1>
+          <p class="main-subtitle">${config.customMessage || 'Giữa không khí Giáng sinh rực rỡ, mong rằng mọi điều an lành và dịu dàng nhất sẽ tìm đến bạn. Cầu chúc cho trái tim bạn luôn được sưởi ấm bởi tình yêu thương, sự thấu hiểu và những khoảnh khắc bình yên bên những người bạn trân quý.'}</p>
         </div>
       </div>
 
