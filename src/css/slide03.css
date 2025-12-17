@@ -1,5 +1,16 @@
 /* slide03.css - Styles scoped to .slide03 only */
 
+@keyframes slide03-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* slide03 - Main Container */
 .slide03 {
   /* Auto layout */
@@ -77,6 +88,8 @@
   height: 32px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  animation: slide03-fade-in-up 0.7s ease-out forwards;
 }
 
 .slide03 .main-subtitle {
@@ -124,6 +137,8 @@
   width: 240px;
   height: 40px;
   object-fit: contain;
+  opacity: 0;
+  animation: slide03-fade-in-up 0.7s ease-out 0.15s forwards;
 }
 
 /* Wish Section - scoped to slide03 */
@@ -153,6 +168,8 @@
   text-align: center;
   width: auto;
   height: 32px;
+  opacity: 0;
+  animation: slide03-fade-in-up 0.6s ease-out 0.1s forwards;
 }
 
 .slide03 .wish-description {
@@ -167,6 +184,8 @@
   height: auto;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  animation: slide03-fade-in-up 0.6s ease-out 0.2s forwards;
 }
 
 .slide03 .wish-section.large .wish-description {

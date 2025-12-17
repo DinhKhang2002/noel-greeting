@@ -1,5 +1,16 @@
 /* slide06.css - Styles scoped to .slide06 only */
 
+@keyframes slide06-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* slide06 - Main Container */
 .slide06 {
   display: flex;
@@ -112,8 +123,6 @@
   letter-spacing: 0.01em;
   color: #000000;
   margin: 0 0 20px 0;
-}
-
 .slide06 .final-text {
   font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -125,6 +134,8 @@
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  animation: slide06-fade-in-up 0.7s ease-out 0.1s forwards;
 }
 
 /* Ornament Divider */
@@ -166,6 +177,8 @@
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  animation: slide06-fade-in-up 0.7s ease-out 0.25s forwards;
 }
 
 /* Bottom Gifts Decoration */

@@ -2,7 +2,7 @@ import '../css/slide03.css'
 import { getConfig, type ChristmasCardConfig, saveConfigToLocalStorage } from '../config'
 import { slide03ImagePaths } from '../utils/imageLoader'
 
-function renderSlide03(config: ChristmasCardConfig) {
+function renderSlide03(_config: ChristmasCardConfig) {
   const app = document.querySelector<HTMLDivElement>('#app')!
   
   app.innerHTML = `
@@ -21,7 +21,7 @@ function renderSlide03(config: ChristmasCardConfig) {
       <div class="main-title-section">
         <div class="main-title-content">
           <h1 class="main-title">Best wishes For A Christmas Party</h1>
-          <p class="main-subtitle">${config.customMessage || 'Wishing you and your family all the best things and timeless treasures on this lovely holiday! Share your endless love and kindness with your nearest and dearest.'}</p>
+          <p class="main-subtitle">'Giữa không khí Giáng sinh rực rỡ, mong rằng mọi điều an lành và dịu dàng nhất sẽ tìm đến bạn. Cầu chúc cho trái tim bạn luôn được sưởi ấm bởi tình yêu thương, sự thấu hiểu và những khoảnh khắc bình yên bên những người bạn trân quý.'}</p>
         </div>
       </div>
 
@@ -36,7 +36,7 @@ function renderSlide03(config: ChristmasCardConfig) {
       <!-- Wish Section 1: Sức khỏe -->
       <div class="wish-section">
         <h2 class="wish-title">Sức khỏe</h2>
-        <p class="wish-description">Sức khỏe dồi dào, luôn tìm được cho mình<br>niềm vui, bình an, hạnh phúc</p>
+        <p class="wish-description">Chúc bạn luôn khỏe mạnh, ngủ ngon mỗi tối,<br>thức dậy với một tâm trạng thật nhẹ nhàng và nhiều năng lượng tích cực.</p>
       </div>
 
       <!-- Spacer White -->
@@ -44,8 +44,8 @@ function renderSlide03(config: ChristmasCardConfig) {
 
       <!-- Wish Section 2: Tiền tài -->
       <div class="wish-section">
-        <h2 class="wish-title">Tiền tài</h2>
-        <p class="wish-description">Công việc thuận lợi, sự nghiệp thăng tiến<br>Tiền vào như nước</p>
+        <h2 class="wish-title">Công việc & ước mơ</h2>
+        <p class="wish-description">Mong rằng mọi dự định của bạn đều dần trở thành hiện thực,<br>công việc thuận lợi và luôn có những người sẵn sàng đồng hành, ủng hộ bạn.</p>
       </div>
 
       <!-- Spacer White -->
@@ -54,7 +54,7 @@ function renderSlide03(config: ChristmasCardConfig) {
       <!-- Wish Section 3: An lành -->
       <div class="wish-section large">
         <h2 class="wish-title">An lành</h2>
-        <p class="wish-description">Giáng sinh là một dịp lễ đặc biệt<br>hãy chậm lại một chút và chúc bạn<br>sớm tìm được sự an lành trong tâm hồn và cuộc sống!</p>
+        <p class="wish-description">Giữa những bộn bề thường ngày, mong bạn luôn giữ được một góc bình yên cho riêng mình,<br>nơi có nụ cười, kỷ niệm đẹp và những người mà chỉ cần nghĩ tới thôi, trái tim đã thấy ấm lại.</p>
       </div>
 
       <!-- Decoration Bottom -->

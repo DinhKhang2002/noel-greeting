@@ -96,6 +96,19 @@ app.post('/api/cards', upload.fields([
   }
 })
 
+// API: list cards (for simple management page)
+app.get('/api/cards', async (_req, res) => {
+  try {
+    const cards = await readCards()
+    // sort newest first
+    cards.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    res.json(cards)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'Failed to list cards' })
+  }
+})
+
 // API: get card
 app.get('/api/cards/:id', async (req, res) => {
   try {

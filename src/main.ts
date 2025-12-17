@@ -206,6 +206,12 @@ function startBackgroundMusic() {
 }
 
 // API helpers
+type CardSummary = {
+  id: string
+  sender: string
+  receiver: string
+  createdAt: string
+}
 async function createCard(formData: FormData): Promise<{ id: string }> {
   const res = await fetch(`${API_BASE}/api/cards`, {
     method: 'POST',
@@ -221,6 +227,14 @@ async function fetchCardConfig(id: string): Promise<ChristmasCardConfig> {
   const res = await fetch(`${API_BASE}/api/cards/${id}`)
   if (!res.ok) {
     throw new Error('Card not found')
+  }
+  return res.json()
+}
+
+async function fetchCards(): Promise<CardSummary[]> {
+  const res = await fetch(`${API_BASE}/api/cards`)
+  if (!res.ok) {
+    throw new Error('Failed to load cards')
   }
   return res.json()
 }
@@ -264,7 +278,7 @@ function renderCreateCardPage() {
           </div>
           <div>
             <label for="message" style="display:block;font-size:14px;font-weight:500;margin-bottom:4px;">Lời chúc</label>
-            <textarea id="message" name="message" rows="5" placeholder="Nhập lời chúc Giáng sinh dành cho người ấy..."
+            <textarea id="message" name="message" rows="5" placeholder="Viết vài dòng thật chân thành gửi đến người nhận..."
               style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid #ddd;font-size:14px;resize:vertical;outline:none;"></textarea>
             <p style="margin-top:4px;font-size:12px;color:var(--color-gray);">
               Nếu để trống, hệ thống sẽ dùng lời chúc mặc định trên các slide.
@@ -308,8 +322,26 @@ function renderCreateCardPage() {
           </button>
 
           <p style="margin-top:4px;font-size:12px;color:var(--color-gray);">
-            Sau khi tạo, bạn có thể tải ảnh QR hoặc copy link để gửi cho người nhận.
+            Sau khi tạo, bạn có thể tải ảnh QR hoặc copy link để gửi cho người nhận. Mỗi QR là một câu chuyện nhỏ dành riêng cho họ.
           </p>
+
+          <hr style="margin:16px 0;border:none;border-top:1px dashed #eee;">
+
+          <button id="showCardsBtn" type="button" style="
+            margin-top:4px;
+            padding:8px 14px;
+            border-radius:999px;
+            border:1px solid #ddd;
+            background:#fff;
+            color:#555;
+            font-size:13px;
+            cursor:pointer;
+            align-self:flex-start;
+          ">
+            📚 Xem danh sách thiệp đã tạo
+          </button>
+
+          <div id="cardsList" style="margin-top:8px;font-size:12px;color:#666;"></div>
         </div>
 
         <div id="qrPreview" style="
@@ -335,9 +367,11 @@ function renderCreateCardPage() {
   `)
 
   const form = document.getElementById('cardForm') as HTMLFormElement | null
-  if (!form) return
+  const showCardsBtn = document.getElementById('showCardsBtn') as HTMLButtonElement | null
+  const cardsList = document.getElementById('cardsList') as HTMLDivElement | null
 
-  form.addEventListener('submit', async (e) => {
+  if (form) {
+    form.addEventListener('submit', async (e) => {
     e.preventDefault()
     const submitBtn = form.querySelector('button[type=\"submit\"]') as HTMLButtonElement | null
     const qrPreview = document.getElementById('qrPreview') as HTMLDivElement | null
@@ -430,7 +464,66 @@ function renderCreateCardPage() {
         submitBtn.textContent = '✨ Tạo thiệp & QR code'
       }
     }
-  })
+    })
+  }
+
+  if (showCardsBtn && cardsList) {
+    showCardsBtn.addEventListener('click', async () => {
+      try {
+        showCardsBtn.disabled = true
+        showCardsBtn.textContent = 'Đang tải danh sách thiệp...'
+        cardsList.textContent = ''
+
+        const cards = await fetchCards()
+        if (!cards.length) {
+          cardsList.innerHTML = '<p>Chưa có thiệp nào được tạo.</p>'
+        } else {
+          const rows = cards
+            .slice(0, 20)
+            .map(card => {
+              const url = new URL(`/card/${card.id}`, window.location.origin).toString()
+              const created = new Date(card.createdAt)
+              const dateText = created.toLocaleString('vi-VN')
+              return `
+                <tr>
+                  <td style="padding:4px 6px;white-space:nowrap;">${card.sender}</td>
+                  <td style="padding:4px 6px;white-space:nowrap;">${card.receiver}</td>
+                  <td style="padding:4px 6px;font-size:11px;color:#999;">${dateText}</td>
+                  <td style="padding:4px 6px;">
+                    <a href="${url}" target="_blank" style="font-size:11px;color:var(--color-lava-red);text-decoration:none;">Mở thiệp</a>
+                  </td>
+                </tr>
+              `
+            }).join('')
+
+          cardsList.innerHTML = `
+            <div style="margin-top:4px;padding:8px 10px;border-radius:12px;background:#fafafa;border:1px solid #eee;max-height:220px;overflow:auto;">
+              <div style="margin-bottom:6px;font-weight:500;color:#444;">Danh sách thiệp gần đây</div>
+              <table style="width:100%;border-collapse:collapse;font-size:12px;">
+                <thead>
+                  <tr style="text-align:left;color:#888;">
+                    <th style="padding:4px 6px;">Người gửi</th>
+                    <th style="padding:4px 6px;">Người nhận</th>
+                    <th style="padding:4px 6px;">Thời gian</th>
+                    <th style="padding:4px 6px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${rows}
+                </tbody>
+              </table>
+            </div>
+          `
+        }
+      } catch (err) {
+        console.error(err)
+        cardsList.innerHTML = '<p style="color:#c00;">Không tải được danh sách thiệp.</p>'
+      } finally {
+        showCardsBtn.disabled = false
+        showCardsBtn.textContent = '📚 Xem danh sách thiệp đã tạo'
+      }
+    })
+  }
 }
 
 async function initCreatePage() {

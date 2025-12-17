@@ -1,5 +1,16 @@
 /* slide02.css - Styles scoped to .slide02 only */
 
+@keyframes slide02-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* slide02 - Main Container */
 .slide02 {
   /* Auto layout */
@@ -109,6 +120,8 @@
   height: 32px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  animation: slide02-fade-in-up 0.7s ease-out forwards;
 }
 
 .slide02 .title-subtitle {
@@ -124,6 +137,8 @@
   height: 120px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  animation: slide02-fade-in-up 0.7s ease-out 0.15s forwards;
 }
 
 /* Bottom Image - scoped to slide02 */

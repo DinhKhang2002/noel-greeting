@@ -19,8 +19,8 @@ function renderSlide05(config: ChristmasCardConfig) {
 
       <!-- Intro Section -->
       <section class="intro-section">
-        <h1 class="intro-title">Một vài lời chân thành<br>người ấy muốn gửi tới bạn</h1>
-        <p class="intro-subtitle">From the sincere words that person wants to send to you</p>
+        <h1 class="intro-title">Một vài lời chân thành,<br>Người ấy muốn gửi tới bạn</h1>
+        <p class="intro-subtitle">Sometimes the warmest words are the ones we write from the heart.</p>
       </section>
 
       <!-- Decoration Top -->
@@ -30,9 +30,9 @@ function renderSlide05(config: ChristmasCardConfig) {
 
       <!-- Message Section -->
       <section class="message-section">
-        <h2 class="message-recipient">Dear Anna</h2>
+        <h2 class="message-recipient">Dear ${config.receiver || 'My special person'}</h2>
         <p class="message-body">
-          ${config.customMessage || 'Gửi vợ iu tương lai của anh: Hiện tại sự nghiệp anh chưa ổn định, anh còn gia đình để lo. Nhưng em cứ yên tâm, anh là 1 người rất yêu thương em, một lòng chung thuỷ với em. Anh hy vọng mùa Giáng sinh này em sẽ luôn yêu anh và sẽ đồng hành cùng anh trên 1 chặng đường sắp tới.<br/>Yêu em!'}
+          ${config.customMessage || 'Có những điều rất khó để nói thành lời, nên anh gửi chúng vào tấm thiệp nhỏ này. Cảm ơn bạn vì đã xuất hiện trong cuộc đời anh, vì những khoảnh khắc bình yên, những lần lắng nghe, và cả những nụ cười rất chân thành. Mong rằng mỗi mùa Giáng sinh trôi qua, chúng ta vẫn còn có thể nghĩ về nhau với thật nhiều yêu thương và trân trọng.'}
         </p>
       </section>
 

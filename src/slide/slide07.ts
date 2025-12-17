@@ -25,12 +25,12 @@ function renderSlide07(config: ChristmasCardConfig) {
       <!-- Title Section -->
       <div class="title-section">
         <h1 class="title-main">MERRY CHRISTMAS AND HAPPY NEW YEAR!</h1>
-        <p class="title-subtitle">Chúc bạn có một mùa Giáng sinh An lành & Ấm áp.<br>Và một năm mới an khang thịnh vượng!</p>
+        <p class="title-subtitle">Chúc bạn có một mùa Giáng sinh thật an yên, ấm áp bên những người mà bạn thương.<br>Và một năm mới tràn đầy sức khỏe, bình an, may mắn và nhiều điều ngọt ngào hơn cả mong đợi.</p>
         <br/>
         <h2 class="title-sender">FROM ${config.sender} WITH LOVE</h2>
       </div>
       
-  
+
       <!-- Decoration Bottom -->
       <div class="decoration-bottom">
         <img src="${slide07ImagePaths.decorationBottom}" alt="Decoration" onerror="this.style.display='none'" />

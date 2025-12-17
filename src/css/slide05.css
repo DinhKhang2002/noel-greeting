@@ -1,5 +1,16 @@
 /* slide05.css - Styles scoped to .slide05 only */
 
+@keyframes slide05-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* slide05 - Main Container */
 .slide05 {
   display: flex;
@@ -60,6 +71,8 @@
   letter-spacing: 0.005em;
   color: #000000;
   margin: 0 0 10px 0;
+  opacity: 0;
+  animation: slide05-fade-in-up 0.7s ease-out forwards;
 }
 
 .slide05 .intro-subtitle {
@@ -88,6 +101,8 @@
   width: 240px;
   height: 40px;
   object-fit: contain;
+  opacity: 0;
+  animation: slide05-fade-in-up 0.7s ease-out 0.15s forwards;
 }
 
 /* Message Section */
@@ -106,8 +121,6 @@
   letter-spacing: 0.01em;
   color: #000000;
   margin: 0 0 20px 0;
-}
-
 .slide05 .message-body {
   font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -116,6 +129,8 @@
   letter-spacing: 0.005em;
   color: #7a7a7a;
   margin: 0;
+  opacity: 0;
+  animation: slide05-fade-in-up 0.7s ease-out 0.25s forwards;
 }
 
 .slide05 .message-body br {
