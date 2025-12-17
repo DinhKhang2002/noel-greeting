@@ -4,6 +4,7 @@ import { slide04ImagePaths } from '../utils/imageLoader'
 
 function renderSlide04(config: ChristmasCardConfig) {
   const app = document.querySelector<HTMLDivElement>('#app')!
+  const receiverImage = config.photo1Url || slide04ImagePaths.receiver
   
   app.innerHTML = `
     <div class="slide04">
@@ -23,14 +24,14 @@ function renderSlide04(config: ChristmasCardConfig) {
       <!-- Lucky One Section -->
       <div class="lucky-section">
         <h1 class="lucky-title">THE LUCKY ONE</h1>
-        <h2 class="lucky-name">${config.sender || 'Marry Anna'}</h2>
+        <h2 class="lucky-name">${config.receiver || 'Marry Anna'}</h2>
       </div>
 
       <!-- Photo Section -->
       <div class="photo-section">
-        <img src="${slide04ImagePaths.receiver}" alt="Background" class="photo-bg-image" onerror="this.style.display='none'" />
+        <img src="${receiverImage}" alt="Background" class="photo-bg-image" onerror="this.style.display='none'" />
         <div class="photo-frame">
-          <img src="${slide04ImagePaths.receiver}" alt="Photo" class="photo-image" onerror="this.style.backgroundColor='#FFFFFF'; this.style.minHeight='349px';" />
+          <img src="${receiverImage}" alt="Photo" class="photo-image" onerror="this.style.backgroundColor='#FFFFFF'; this.style.minHeight='349px';" />
         </div>
       </div>
 

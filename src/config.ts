@@ -1,19 +1,26 @@
 export interface ChristmasCardConfig {
   sender: string
+  receiver: string
   showPreHeader?: boolean
   customMessage?: string
+  photo1Url?: string
+  photo2Url?: string
 }
 
 export const defaultConfig: ChristmasCardConfig = {
   sender: 'KHANG DEV',
+  receiver: 'Anna',
   showPreHeader: false,
-  customMessage: undefined
+  customMessage: undefined,
+  photo1Url: undefined,
+  photo2Url: undefined
 }
 
 export function getConfigFromURL(): ChristmasCardConfig {
   const urlParams = new URLSearchParams(window.location.search)
   return {
     sender: urlParams.get('sender') || defaultConfig.sender,
+    receiver: urlParams.get('receiver') || defaultConfig.receiver,
     showPreHeader: urlParams.get('hidePreHeader') !== 'true',
     customMessage: urlParams.get('message') || undefined
   }

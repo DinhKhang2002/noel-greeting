@@ -4,6 +4,7 @@ import { slide06ImagePaths } from '../utils/imageLoader'
 
 function renderSlide06(config: ChristmasCardConfig) {
   const app = document.querySelector<HTMLDivElement>('#app')!
+  const receiverImage = config.photo2Url || slide06ImagePaths.receiver
   
   app.innerHTML = `
     <div class="slide06">
@@ -32,7 +33,7 @@ function renderSlide06(config: ChristmasCardConfig) {
 
       <!-- Photo Section -->
       <div class="photo-section">
-        <img src="${slide06ImagePaths.receiver}" alt="Special Person" class="final-photo" onerror="this.style.backgroundColor='#FFFFFF'; this.style.minHeight='360px';" />
+        <img src="${receiverImage}" alt="Special Person" class="final-photo" onerror="this.style.backgroundColor='#FFFFFF'; this.style.minHeight='360px';" />
       </div>
 
       <!-- Decoration Bottom -->

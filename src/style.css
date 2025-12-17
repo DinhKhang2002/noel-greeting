@@ -37,6 +37,15 @@ body {
   align-items: flex-start;
   padding: 20px;
   background-color: #FFFFFF;
+  transition: opacity 0.5s ease;
+}
+
+#app.fade-in {
+  opacity: 1;
+}
+
+#app.fade-out {
+  opacity: 0;
 }
 
 /* Note: Slide-specific styles are in their respective CSS files:
