@@ -52,6 +52,17 @@
   margin: 0;
 }
 
+.slide07 .title-subtitle {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 0.005em;
+  color: #555555;
+  margin: 4px 0 0 0;
+  max-width: 480px;
+}
+
 .slide07 .title-sender {
   font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -199,51 +210,73 @@
 @media (max-width: 640px) {
   .slide07 {
     width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     min-height: 100vh;
-    background: #FFFBF8;
+    background: #FFFFFF;
     align-items: center;
   }
 
-  .slide07 .top-decoration,
-  .slide07 .logo-section,
-  .slide07 .final-message-section,
-  .slide07 .ornament-divider,
-  .slide07 .photo-section,
-  .slide07 .bottom-decoration {
+  .slide07 .navigation,
+  .slide07 .hero-image,
+  .slide07 .title-section,
+  .slide07 .decoration-top,
+  .slide07 .decoration-bottom,
+  .slide07 .bottom-image {
     width: 100%;
+    margin: 0 auto;
   }
 
-  .slide07 .top-decoration {
+  .slide07 .navigation {
+    height: auto;
+    padding: 16px 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slide07 .navigation img {
+    width: 140px;
     height: auto;
   }
 
-  .slide07 .logo-section {
-    height: 80px;
+  .slide07 .hero-image {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .slide07 .logo-image {
-    width: 140px;
+  .slide07 .hero-image img {
+    width: 100%;
+    height: auto;
+    min-height: 260px;
+    object-fit: cover;
   }
 
-  .slide07 .final-message-section {
-    padding: 30px 20px 15px;
+  .slide07 .title-section {
+    padding: 24px 16px;
   }
 
-  .slide07 .final-text {
+  .slide07 .title-main {
+    font-size: 18px;
+  }
+
+  .slide07 .title-subtitle {
     max-width: 100%;
     font-size: 13px;
   }
 
-  .slide07 .photo-section {
-    padding: 20px;
+  .slide07 .title-sender {
+    font-size: 14px;
   }
 
-  .slide07 .final-photo {
-    width: 80%;
-    max-width: 360px;
+  .slide07 .bottom-image {
+    width: 100%;
   }
 
-  .slide07 .bottom-decoration {
+  .slide07 .bottom-image img {
+    width: 100%;
     height: auto;
+    object-fit: cover;
   }
 }
