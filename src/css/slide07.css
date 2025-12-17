@@ -1,0 +1,249 @@
+/* slide07.css - Styles scoped to .slide06 only */
+
+.slide07 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+
+  position: relative;
+  width: 600px;
+  min-height: 100vh;
+  background: #FFFFFF;
+}
+
+.slide07 .navigation {
+  width: 600px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.slide07 .nav-logo {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Title Section for slide07 closing message */
+.slide07 .title-section {
+  width: 600px;
+  padding: 30px 40px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.slide07 .title-main {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+}
+
+.slide07 .title-sender {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.15em;
+  color: #cc0036;
+  margin: 0;
+}
+
+/* Hero Image - scoped to slide05 */
+.slide07 .hero-image {
+  width: 600px;
+  height: 370px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.slide07 .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Decoration - scoped to slide03 */
+.slide07 .decoration-top,
+.slide07 .decoration-bottom {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.slide07 .decoration-top img,
+.slide07 .decoration-bottom img {
+  width: 240px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Final Message Section */
+.slide07 .final-message-section {
+  width: 600px;
+  padding: 40px 50px 20px;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.slide07 .final-title {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: #000000;
+  margin: 0 0 20px 0;
+}
+
+.slide07 .final-text {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.9;
+  letter-spacing: 0.005em;
+  color: #444444;
+  margin: 0;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ornament Divider */
+.slide07 .ornament-divider {
+  width: 600px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.slide07 .ornament-divider::before {
+  content: '';
+  width: 180px;
+  height: 1px;
+  border-top: 2px solid #d8a25a;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(216, 162, 90, 0.4);
+}
+
+.slide07 .ornament-divider.bottom {
+  margin-bottom: 10px;
+}
+
+/* Photo Section */
+.slide07 .photo-section {
+  width: 600px;
+  padding: 20px 50px 30px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide07 .final-photo {
+  width: 360px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Bottom Gifts Decoration */
+.slide07 .bottom-decoration {
+  width: 600px;
+  height: 220px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.slide07 .bottom-decoration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bottom Wave Image - scoped to slide05 */
+.slide07 .bottom-image {
+  width: 600px;
+  height: auto;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.slide07 .bottom-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Responsive Design - scoped to slide07 */
+@media (max-width: 640px) {
+  .slide07 {
+    width: 100%;
+    min-height: 100vh;
+    background: #FFFBF8;
+    align-items: center;
+  }
+
+  .slide07 .top-decoration,
+  .slide07 .logo-section,
+  .slide07 .final-message-section,
+  .slide07 .ornament-divider,
+  .slide07 .photo-section,
+  .slide07 .bottom-decoration {
+    width: 100%;
+  }
+
+  .slide07 .top-decoration {
+    height: auto;
+  }
+
+  .slide07 .logo-section {
+    height: 80px;
+  }
+
+  .slide07 .logo-image {
+    width: 140px;
+  }
+
+  .slide07 .final-message-section {
+    padding: 30px 20px 15px;
+  }
+
+  .slide07 .final-text {
+    max-width: 100%;
+    font-size: 13px;
+  }
+
+  .slide07 .photo-section {
+    padding: 20px;
+  }
+
+  .slide07 .final-photo {
+    width: 80%;
+    max-width: 360px;
+  }
+
+  .slide07 .bottom-decoration {
+    height: auto;
+  }
+}

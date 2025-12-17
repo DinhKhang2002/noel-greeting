@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Global CSS Variables */
+:root {
+  --color-white: #FFFFFF;
+  --color-lava-red: #CC0036;
+  --color-dark-red: #B40030;
+  --color-gray: #939393;
+  --color-light-gray: #F9F9F9;
+  --font-poppins: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles - Base only, slides can override */
+body {
+  font-family: var(--font-poppins);
+  background-color: #FFFFFF;
+  color: #333;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App Container - Global Base Styles Only */
+/* Slides will override these as needed */
+#app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #FFFFFF;
+}
+
+/* Note: Slide-specific styles are in their respective CSS files:
+   - src/css/slide01.css for slide01
+   - src/css/slide02.css for slide02
+   - src/css/slide-selector.css for slide selector
+*/

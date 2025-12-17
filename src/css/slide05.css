@@ -1,0 +1,306 @@
+/* slide05.css - Styles scoped to .slide05 only */
+
+/* slide05 - Main Container */
+.slide05 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+
+  position: relative;
+  width: 600px;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Navigation (Merry Christmas logo) */
+.slide05 .navigation {
+  width: 600px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #86d6ff;
+}
+
+.slide05 .nav-logo {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Hero Image - scoped to slide05 */
+.slide05 .hero-image {
+  width: 600px;
+  height: 370px;
+  overflow: hidden;
+  background-color: #86d6ff;
+}
+
+.slide05 .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Intro Section */
+.slide05 .intro-section {
+  width: 600px;
+  padding: 40px 40px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.slide05 .intro-title {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+  color: #000000;
+  margin: 0 0 10px 0;
+}
+
+.slide05 .intro-subtitle {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.005em;
+  color: #7a7a7a;
+  margin: 0;
+}
+
+/* Decoration - scoped to slide03 */
+.slide05 .decoration-top,
+.slide05 .decoration-bottom {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.slide05 .decoration-top img,
+.slide05 .decoration-bottom img {
+  width: 240px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Message Section */
+.slide05 .message-section {
+  width: 600px;
+  padding: 40px 40px 30px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.slide05 .message-recipient {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: #000000;
+  margin: 0 0 20px 0;
+}
+
+.slide05 .message-body {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.9;
+  letter-spacing: 0.005em;
+  color: #7a7a7a;
+  margin: 0;
+}
+
+.slide05 .message-body br {
+  line-height: 2;
+}
+
+/* Bottom Wave Image - scoped to slide05 */
+.slide05 .bottom-image {
+  width: 600px;
+  height: auto;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.slide05 .bottom-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.slide05 .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.slide05 .social-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.slide05 .social-icon:hover {
+  transform: scale(1.1);
+}
+
+.slide05 .social-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slide05 .footer-line {
+  width: 520px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 30px;
+}
+
+.slide05 .footer-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.slide05 .footer-link {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.slide05 .footer-link:hover {
+  opacity: 0.8;
+}
+
+.slide05 .footer-copy {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-bottom: 20px;
+  width: 456px;
+}
+
+.slide05 .footer-unsubscribe {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.slide05 .footer-unsubscribe:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design - scoped to slide05 */
+@media (max-width: 640px) {
+  .slide05 {
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+    align-items: center;
+  }
+
+  .slide05 .navigation,
+  .slide05 .hero-image,
+  .slide05 .intro-section,
+  .slide05 .message-section,
+  .slide05 .decoration-top,
+  .slide05 .decoration-bottom,
+  .slide05 .bottom-image,
+  .slide05 .footer {
+    width: 100%;
+  }
+
+  .slide05 .navigation {
+    height: auto;
+    padding: 16px 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slide05 .nav-logo {
+    width: 60%;
+    max-width: 220px;
+    height: auto;
+  }
+
+  .slide05 .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slide05 .hero-image img {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    object-fit: cover;
+  }
+
+  .slide05 .intro-section {
+    padding: 30px 20px 15px;
+  }
+
+  .slide05 .message-section {
+    padding: 30px 20px 25px;
+  }
+
+  .slide05 .footer {
+    padding: 30px 20px 35px;
+  }
+
+  .slide05 .footer-line {
+    width: calc(100% - 40px);
+    max-width: 520px;
+  }
+
+  .slide05 .footer-copy {
+    width: 100%;
+    max-width: 456px;
+    padding: 0 10px;
+  }
+
+  .slide05 .bottom-image {
+    width: 100%;
+  }
+
+  .slide05 .bottom-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}

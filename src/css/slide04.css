@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400&family=Parisienne&family=Phudu:wght@400&display=swap');
+
+/* slide04.css - Styles scoped to .slide04 only */
+
+/* slide04 - Main Container */
+.slide04 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  position: relative;
+  width: 600px;
+  height: 1611px;
+
+  background: #FFFFFF;
+}
+
+/* Navigation - scoped to slide04 */
+.slide04 .navigation {
+  width: 600px;
+  height: 130px;
+  background-color: #015075;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide04 .nav-logo {
+  width: 600px;
+  height: 130px;
+  object-fit: contain;
+}
+
+/* Hero Image - scoped to slide04 */
+.slide04 .hero-image {
+  width: 600px;
+  height: 370px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+}
+
+.slide04 .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Spacer - scoped to slide04 */
+.slide04 .spacer {
+  width: 600px;
+  height: 30px;
+  background-color: #FFFFFF;
+}
+
+.slide04 .spacer.white {
+  background-color: #FFFFFF;
+}
+
+/* Lucky Section - scoped to slide04 */
+.slide04 .lucky-section {
+  width: 600px;
+  height: 135px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.slide04 .lucky-title {
+  font-family: 'Philosopher', serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.3571428571428572em;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin: 0 0 5px 0;
+  text-align: center;
+  width: auto;
+  min-width: 320px;
+  height: 38px;
+  white-space: nowrap;
+}
+
+.slide04 .lucky-name {
+  font-family: 'Parisienne', cursive;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.0666666666666667em;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+  width: auto;
+  min-width: 320px;
+  height: 32px;
+  white-space: nowrap;
+}
+
+/* Photo Section - scoped to slide04 */
+.slide04 .photo-section {
+  width: 600px;
+  height: 480px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+.slide04 .photo-bg-image {
+  position: absolute;
+  width: 600px;
+  height: 480px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.5;
+}
+
+.slide04 .photo-frame {
+  position: absolute;
+  z-index: 2;
+  width: 359.9px;
+  height: 349.1px;
+  border-radius: 10px;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slide04 .photo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Message Section - scoped to slide04 */
+.slide04 .message-section {
+  width: 600px;
+  height: 124px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.slide04 .message-title {
+  font-family: 'Phudu', cursive;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.7272727272727273em;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin: 0 0 5px 0;
+  text-align: center;
+  width: 520px;
+  height: 37px;
+}
+
+.slide04 .message-text {
+  font-family: 'Philosopher', serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.9em;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+  width: 520px;
+  height: 38px;
+}
+
+/* Bottom Image - scoped to slide04 */
+.slide04 .bottom-image {
+  width: 600px;
+  height: 342px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.slide04 .bottom-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive Design - scoped to slide04 */
+@media (max-width: 640px) {
+  .slide04 {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background: #FFFFFF;
+    align-items: center;
+  }
+
+  .slide04 .navigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #015075;
+  }
+
+  .slide04 .nav-logo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 600/130;
+  }
+
+  .slide04 .hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slide04 .hero-image img {
+    width: 100%;
+    height: auto;
+    min-height: 370px;
+    object-fit: cover;
+  }
+
+  .slide04 .spacer {
+    width: 100%;
+  }
+
+  .slide04 .lucky-section {
+    width: 100%;
+    padding: 30px 20px;
+    height: auto;
+    min-height: 135px;
+    flex-direction: column;
+  }
+
+  .slide04 .lucky-title {
+    width: auto;
+    min-width: 320px;
+    font-size: 24px;
+    height: auto;
+    white-space: nowrap;
+  }
+
+  .slide04 .lucky-name {
+    width: auto;
+    min-width: 320px;
+    font-size: 26px;
+    height: auto;
+    white-space: nowrap;
+  }
+
+  .slide04 .photo-section {
+    width: 100%;
+    height: auto;
+    min-height: 480px;
+    position: relative;
+  }
+
+  .slide04 .photo-bg-image {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+  }
+
+  .slide04 .photo-frame {
+    width: 60%;
+    max-width: 359.9px;
+    height: auto;
+    aspect-ratio: 359.9/349.1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slide04 .message-section {
+    width: 100%;
+    padding: 10px 20px;
+    height: auto;
+    min-height: 124px;
+  }
+
+  .slide04 .message-title {
+    width: 100%;
+    max-width: 520px;
+    font-size: 20px;
+    height: auto;
+  }
+
+  .slide04 .message-text {
+    width: 100%;
+    max-width: 520px;
+    font-size: 18px;
+    height: auto;
+  }
+
+  .slide04 .bottom-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-height: 342px;
+  }
+
+  .slide04 .bottom-image img {
+    width: 100%;
+    height: auto;
+    min-height: 342px;
+    object-fit: cover;
+  }
+}
