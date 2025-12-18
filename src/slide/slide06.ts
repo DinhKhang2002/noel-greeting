@@ -22,7 +22,7 @@ function renderSlide06(config: ChristmasCardConfig) {
       <section class="final-message-section">
         <h1 class="final-title">Lời cuối cùng</h1>
         <p class="final-text">
-         'Một mùa Giáng sinh lại đến và một năm cũ sắp qua, chúc mọi điều tốt đẹp sẽ luôn hiện hữu xung quanh bạn, tựa như ánh đèn lung linh đêm Giáng sinh, dẫn lối bạn đến với những hạnh phúc ngọt ngào nhất. Chúc những nỗ lực và sự cố gắng sẽ gói ghém lại những nỗi buồn của năm cũ, chỉ giữ lại niềm vui và sự an nhiên để làm hành trang bước vào năm mới.'}
+          Một mùa Giáng sinh lại đến và một năm cũ sắp qua, chúc mọi điều tốt đẹp sẽ luôn hiện hữu xung quanh bạn, tựa như ánh đèn lung linh đêm Giáng sinh, dẫn lối bạn đến với những hạnh phúc ngọt ngào nhất. Chúc những nỗ lực và sự cố gắng sẽ gói ghém lại những nỗi buồn của năm cũ, chỉ giữ lại niềm vui và sự an nhiên để làm hành trang bước vào năm mới.
         </p>
       </section>
 

@@ -32,7 +32,7 @@ function renderSlide02(_config: ChristmasCardConfig) {
       <div class="title-section">
         <div class="title-content">
           <h1 class="title-main">Best Wish For A Christmas Party</h1>
-          <p class="title-subtitle">'Chúc bạn và những người thân yêu có một mùa Giáng sinh trọn vẹn yêu thương, đủ đầy bình an. Mong rằng trong những ngày se lạnh này, bạn luôn được sưởi ấm bởi nụ cười, những cái ôm và sự quan tâm chân thành từ những người thật sự quan trọng với bạn.'</p>
+          <p class="title-subtitle">Chúc bạn và những người thân yêu có một mùa Giáng sinh trọn vẹn yêu thương, đủ đầy bình an. Mong rằng trong những ngày se lạnh này, bạn luôn được sưởi ấm bởi nụ cười, những cái ôm và sự quan tâm chân thành từ những người thật sự quan trọng với bạn.</p>
         </div>
       </div>
 

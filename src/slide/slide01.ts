@@ -4,6 +4,7 @@ import { imagePaths } from '../utils/imageLoader'
 
 function renderApp(config: ChristmasCardConfig) {
   const app = document.querySelector<HTMLDivElement>('#app')!
+  const sender = config.sender.toUpperCase() || 'KHANG DEV'
   
   app.innerHTML = `
     <div class="slide01">
@@ -29,8 +30,9 @@ function renderApp(config: ChristmasCardConfig) {
       <div class="title-section">
         <div class="title-content">
           <h1 class="title-main">Merry Christmas and a Happy New Year!</h1>
-          <p class="title-subtitle">'Chúc bạn có một mùa Giáng sinh An lành & Ấm áp.<br>Và một năm mới an khang thịnh vượng!'}</p>
-          <h2 class="title-sender">LOVE FROM ${config.sender}</h2>
+          <p class="title-subtitle">Chúc bạn có một mùa Giáng sinh An lành & Ấm áp.<br>Và một năm mới an khang thịnh vượng!</p>
+          <br/>
+          <h2 class="title-sender">LOVE FROM ${sender}</h2>
         </div>
       </div>
 

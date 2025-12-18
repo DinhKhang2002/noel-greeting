@@ -16,14 +16,10 @@ export const defaultConfig: ChristmasCardConfig = {
   photo2Url: undefined
 }
 
-export function getConfigFromURL(): ChristmasCardConfig {
-  const urlParams = new URLSearchParams(window.location.search)
-  return {
-    sender: urlParams.get('sender') || defaultConfig.sender,
-    receiver: urlParams.get('receiver') || defaultConfig.receiver,
-    showPreHeader: urlParams.get('hidePreHeader') !== 'true',
-    customMessage: urlParams.get('message') || undefined
-  }
+export function getConfigFromURL(): Partial<ChristmasCardConfig> {
+  // Không dùng URL params nữa, chỉ lấy config từ localStorage (đã được lưu từ API)
+  // Trả về object rỗng để không override storedConfig
+  return {}
 }
 
 export function saveConfigToLocalStorage(config: ChristmasCardConfig): void {
@@ -48,9 +44,18 @@ export function getConfig(): ChristmasCardConfig {
   const urlConfig = getConfigFromURL()
   const storedConfig = loadConfigFromLocalStorage()
   
+  // Ưu tiên storedConfig từ localStorage (đã được lưu từ API khi mở /card/:id)
+  // Nếu có storedConfig, dùng nó làm base và chỉ merge với urlConfig
+  if (storedConfig) {
+    return {
+      ...storedConfig,
+      ...urlConfig
+    }
+  }
+  
+  // Nếu không có storedConfig, dùng defaultConfig và merge với urlConfig
   return {
     ...defaultConfig,
-    ...storedConfig,
     ...urlConfig
   }
 }
