@@ -64,7 +64,7 @@ app.post('/api/cards', upload.fields([
   try {
     await ensureDirs()
 
-    const { sender, receiver, customMessage } = req.body
+    const { sender, receiver, message } = req.body
 
     const files = req.files || {}
     const photo1File = Array.isArray(files.photo1) ? files.photo1[0] : null
@@ -79,7 +79,7 @@ app.post('/api/cards', upload.fields([
       id,
       sender: sender || 'KHANG DEV',
       receiver: receiver || 'Anna',
-      customMessage: customMessage || undefined,
+      customMessage: message || undefined,
       photo1Url,
       photo2Url,
       createdAt: new Date().toISOString()

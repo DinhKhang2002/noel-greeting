@@ -43,22 +43,5 @@
     "photo1Url": "/uploads/vo02-1765982086304.jpg",
     "photo2Url": "/uploads/vo01-1765982086307.jpg",
     "createdAt": "2025-12-17T14:34:46.315Z"
-  },
-  {
-    "id": "78080748-1fea-4ef4-93db-48c0505971d7",
-    "sender": "Khang Djnh",
-    "receiver": "Diu Huyen",
-    "photo1Url": "/uploads/vo02-1765985434469.jpg",
-    "photo2Url": "/uploads/vo01-1765985434470.jpg",
-    "createdAt": "2025-12-17T15:30:34.474Z"
-  },
-  {
-    "id": "3c3fd321-f9be-4c6a-a870-fe319f228484",
-    "sender": "DINH VAN KHANG",
-    "receiver": "DIU HUYEN",
-    "customMessage": "Anh đã viết thư cho ông già Noel để xin món quà tuyệt vời nhất thế giới, nhưng ông ấy bảo ông ấy đã gửi món quà đó cho anh từ 1 năm trước rồi, đó chính là Em. Chúc công chúa của anh một mùa Noel thật rực rỡ, xinh đẹp và luôn cười thật tươi nhé. Yêu em nhiều!",
-    "photo1Url": "/uploads/vo02-1765985934884.jpg",
-    "photo2Url": "/uploads/vo01-1765985934886.jpg",
-    "createdAt": "2025-12-17T15:38:54.893Z"
   }
 ]

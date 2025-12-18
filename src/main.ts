@@ -8,7 +8,7 @@ import './css/slide06.css'
 import './css/slide07.css'
 import QRCode from 'qrcode'
 import { imagePaths } from './utils/imageLoader'
-import { getConfig, saveConfigToLocalStorage, defaultConfig, type ChristmasCardConfig } from './config'
+import { getConfig, saveConfigToLocalStorage, type ChristmasCardConfig } from './config'
 import { initSlide02 } from './slide/slide02'
 import { initSlide03 } from './slide/slide03'
 import { initSlide04 } from './slide/slide04'
@@ -277,8 +277,8 @@ function renderCreateCardPage() {
               style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid #ddd;font-size:14px;outline:none;"/>
           </div>
           <div>
-            <label for="customMessage" style="display:block;font-size:14px;font-weight:500;margin-bottom:4px;">Lời chúc</label>
-            <textarea id="customMessage" name="customMessage" rows="5" placeholder="Viết vài dòng thật chân thành gửi đến người nhận..."
+            <label for="message" style="display:block;font-size:14px;font-weight:500;margin-bottom:4px;">Lời chúc</label>
+            <textarea id="message" name="message" rows="5" placeholder="Viết vài dòng thật chân thành gửi đến người nhận..."
               style="width:100%;padding:10px 12px;border-radius:10px;border:1px solid #ddd;font-size:14px;resize:vertical;outline:none;"></textarea>
             <p style="margin-top:4px;font-size:12px;color:var(--color-gray);">
               Nếu để trống, hệ thống sẽ dùng lời chúc mặc định trên các slide.
@@ -381,30 +381,8 @@ function renderCreateCardPage() {
         submitBtn.textContent = 'Đang tạo thiệp...'
       }
 
-      // Lưu config tạm vào localStorage để các slide đọc được ngay
-      const senderInput = (document.getElementById('sender') as HTMLInputElement | null)?.value?.trim()
-      const receiverInput = (document.getElementById('receiver') as HTMLInputElement | null)?.value?.trim()
-      const messageInput = (document.getElementById('customMessage') as HTMLTextAreaElement | null)?.value?.trim()
-
-      const localConfig: ChristmasCardConfig = {
-        ...defaultConfig,
-        sender: senderInput || defaultConfig.sender,
-        receiver: receiverInput || defaultConfig.receiver,
-        customMessage: messageInput || undefined
-      }
-      saveConfigToLocalStorage(localConfig)
-
       const formData = new FormData(form)
       const { id } = await createCard(formData)
-
-      // Sau khi tạo card thành công, fetch lại config đầy đủ từ API và lưu vào localStorage
-      try {
-        const fullConfig = await fetchCardConfig(id)
-        saveConfigToLocalStorage(fullConfig)
-      } catch (err) {
-        console.warn('Failed to fetch full config after creation', err)
-        // Nếu fail, vẫn dùng config đã lưu ở trên
-      }
 
       const cardUrl = new URL(`/card/${id}`, window.location.origin).toString()
 
