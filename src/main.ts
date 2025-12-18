@@ -16,7 +16,11 @@ import { initSlide05 } from './slide/slide05'
 import { initSlide06 } from './slide/slide06'
 import { initSlide07 } from './slide/slide07'
 
-const API_BASE = import.meta.env.PROD ? '' : 'http://localhost:4000'
+// API_BASE: trong production, dùng VITE_API_BASE từ env (Netlify) hoặc cùng origin
+// Trong dev, dùng localhost:4000
+const API_BASE = import.meta.env.PROD 
+  ? (import.meta.env.VITE_API_BASE || '') 
+  : 'http://localhost:4000'
 
 function getAppElement(): HTMLDivElement {
   const app = document.querySelector<HTMLDivElement>('#app')

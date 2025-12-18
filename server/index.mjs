@@ -38,7 +38,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-app.use(cors())
+// CORS: cho phép tất cả origin (có thể restrict sau khi biết URL Netlify)
+app.use(cors({
+  origin: true, // Cho phép tất cả origin (hoặc thay bằng array URLs cụ thể)
+  credentials: true
+}))
 app.use(express.json())
 
 // Helper to read/write cards
