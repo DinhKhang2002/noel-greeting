@@ -88,7 +88,7 @@ function renderSlide01WithConfig(config: ChristmasCardConfig) {
       <div class="title-section">
         <div class="title-content">
           <h1 class="title-main">Merry Christmas and a Happy New Year!</h1>
-          <p class="title-subtitle">${config.customMessage || 'Chúc bạn có một mùa Giáng sinh An lành & Ấm áp.<br>Và một năm mới an khang thịnh vượng!'}</p>
+          <p class="title-subtitle">Chúc bạn có một mùa Giáng sinh An lành & Ấm áp.<br>Và một năm mới an khang thịnh vượng!</p>
           <h2 class="title-sender">LOVE FROM ${config.sender}</h2>
         </div>
       </div>
