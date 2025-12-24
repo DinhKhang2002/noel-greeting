@@ -18,6 +18,7 @@
     "multer": "^2.0.2",
     "qrcode": "^1.5.4",
     "uuid": "^13.0.0",
-    "firebase-admin": "^12.1.0"
+    "firebase-admin": "^12.1.0",
+    "dotenv": "^16.3.1"
   }
 }
