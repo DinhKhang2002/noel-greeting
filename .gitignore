@@ -14,8 +14,6 @@ dist-ssr
 
 # Server data (sẽ được tạo tự động khi deploy)
 data/cards.json
-uploads/*
-!uploads/.gitkeep
 
 # Editor directories and files
 .vscode/*
