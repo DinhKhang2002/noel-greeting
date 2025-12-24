@@ -5,6 +5,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { v4 as uuidv4 } from 'uuid'
+import admin from 'firebase-admin'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -14,14 +15,30 @@ const PORT = process.env.PORT || 4000
 
 // Paths
 const UPLOAD_DIR = path.join(__dirname, '..', 'uploads')
-const DATA_DIR = path.join(__dirname, '..', 'data')
-const CARDS_FILE = path.join(DATA_DIR, 'cards.json')
 const DIST_DIR = path.join(__dirname, '..', 'dist')
 
-// Ensure folders exist
+// Initialize Firebase Admin
+let db = null
+let isUsingFirebase = false
+
+if (process.env.FIREBASE_SERVICE_ACCOUNT_KEY) {
+  try {
+    const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY)
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+      databaseURL: process.env.FIREBASE_DATABASE_URL
+    })
+    db = admin.database()
+    isUsingFirebase = true
+    console.log('✓ Firebase initialized')
+  } catch (err) {
+    console.error('Firebase init failed, falling back to local storage:', err.message)
+  }
+}
+
+// Ensure folders exist (for uploads)
 async function ensureDirs() {
   await fs.mkdir(UPLOAD_DIR, { recursive: true })
-  await fs.mkdir(DATA_DIR, { recursive: true })
 }
 
 // Multer setup
@@ -38,9 +55,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-// CORS: cho phép tất cả origin (có thể restrict sau khi biết URL Netlify)
+// CORS
 app.use(cors({
-  origin: true, // Cho phép tất cả origin (hoặc thay bằng array URLs cụ thể)
+  origin: true,
   credentials: true
 }))
 app.use(express.json())
@@ -48,6 +65,14 @@ app.use(express.json())
 // Helper to read/write cards
 async function readCards() {
   try {
+    if (isUsingFirebase && db) {
+      const snapshot = await db.ref('cards').get()
+      const data = snapshot.val()
+      return data ? Object.values(data) : []
+    }
+    // Fallback to local storage
+    const DATA_DIR = path.join(__dirname, '..', 'data')
+    const CARDS_FILE = path.join(DATA_DIR, 'cards.json')
     const data = await fs.readFile(CARDS_FILE, 'utf8')
     return JSON.parse(data)
   } catch (err) {
@@ -57,7 +82,23 @@ async function readCards() {
 }
 
 async function writeCards(cards) {
-  await fs.writeFile(CARDS_FILE, JSON.stringify(cards, null, 2), 'utf8')
+  try {
+    if (isUsingFirebase && db) {
+      const cardsObj = {}
+      cards.forEach(card => {
+        cardsObj[card.id] = card
+      })
+      await db.ref('cards').set(cardsObj)
+      return
+    }
+    // Fallback to local storage
+    const DATA_DIR = path.join(__dirname, '..', 'data')
+    const CARDS_FILE = path.join(DATA_DIR, 'cards.json')
+    await fs.mkdir(DATA_DIR, { recursive: true })
+    await fs.writeFile(CARDS_FILE, JSON.stringify(cards, null, 2), 'utf8')
+  } catch (err) {
+    throw err
+  }
 }
 
 // API: create card
