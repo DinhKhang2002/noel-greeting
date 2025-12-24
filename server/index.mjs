@@ -131,12 +131,8 @@ app.get('/api/cards/:id', async (req, res) => {
 app.use('/uploads', express.static(UPLOAD_DIR))
 app.use(express.static(DIST_DIR))
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(DIST_DIR, 'index.html'))
-})
-
-// SPA fallback for root and /card/:id
-app.get(['/card/:id', '/'], (_req, res) => {
+// SPA fallback for all routes
+app.get(/.*/i, (_req, res) => {
   res.sendFile(path.join(DIST_DIR, 'index.html'))
 })
 
