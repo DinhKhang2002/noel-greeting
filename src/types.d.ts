@@ -5,5 +5,13 @@ declare module '*.css' {
   export default content
 }
 
-declare module 'qrcode';
+declare module 'qrcode'
+
+interface ImportMetaEnv {
+  readonly VITE_API_BASE?: string
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
 
